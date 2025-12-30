@@ -21,10 +21,10 @@
 ### Design System
 - [x] Configure TailwindCSS custom theme with improved color palette
 - [x] Set up typography scale and spacing system
-- [ ] Create Button component with variants
-- [ ] Create Input and Textarea components
-- [ ] Create Card component with consistent styling
-- [ ] Create Badge component for difficulty, status, visibility
+- [x] Create Button component with variants (using shadcn/ui)
+- [x] Create Input and Textarea components (using shadcn/ui)
+- [x] Create Card component with consistent styling (using shadcn/ui)
+- [x] Create Badge component for difficulty, status, visibility (using shadcn/ui)
 - [ ] Create Modal/Dialog component
 - [ ] Create Dropdown/Select component
 - [ ] Create Tabs component
@@ -67,30 +67,30 @@
 ### Module Management
 - [ ] Create add module to path
 - [ ] Implement edit module details
-- [ ] Add drag-and-drop module reordering
+- [x] Add drag-and-drop module reordering
 - [ ] Add delete module with confirmation
 
 ### Lesson Editor (Core Feature)
-- [ ] Integrate TipTap rich text editor
-- [ ] Implement text block with formatting
-- [ ] Implement code block with syntax highlighting
-- [ ] Implement video embed block (YouTube)
-- [ ] Implement image block (upload/URL)
+- [x] Integrate TipTap rich text editor
+- [x] Implement text block with formatting
+- [x] Implement code block with syntax highlighting
+- [x] Implement video embed block (YouTube)
+- [x] Implement image block (upload/URL)
 - [ ] Implement lab recipe block (structured template)
 - [ ] Implement resource card block
 - [ ] Add quiz placeholder block (design only)
 - [ ] Add AI chat placeholder block (design only)
 - [ ] Implement block palette for adding blocks
-- [ ] Add drag-and-drop block reordering
+- [ ] Add drag-and-drop block reordering (not needed for MVP)
 - [ ] Add duplicate block functionality
 - [ ] Add delete block functionality
-- [ ] Implement auto-save with debouncing
+- [x] Implement auto-save with debouncing
 - [ ] Add preview mode for lessons
 
 ### Lesson Management
 - [ ] Create add lesson to module
 - [ ] Implement edit lesson details
-- [ ] Add drag-and-drop lesson reordering
+- [x] Add drag-and-drop lesson reordering
 - [ ] Add delete lesson with confirmation
 - [ ] Build lesson list tree view (path > modules > lessons)
 
@@ -258,46 +258,46 @@
 - [x] Design wireframes for key screens
 
 ### Dashboard Layout
-- [ ] Create DashboardLayout component for creators
-- [ ] Build sidebar navigation with sections
-- [ ] Implement responsive header with user menu
+- [x] Create DashboardLayout component for creators
+- [x] Build sidebar navigation with sections
+- [x] Implement responsive header with user menu
 - [ ] Add breadcrumb navigation
-- [ ] Create dashboard home/overview page
+- [x] Create dashboard home/overview page
 
 ### Learning Path Management
-- [ ] Build learning paths list view with cards
-- [ ] Create new path creation modal/form
+- [x] Build learning paths list view with cards
+- [x] Create new path creation modal/form
 - [ ] Implement path editing interface
 - [ ] Add path settings (visibility, gating, tags)
 - [ ] Build path analytics overview
 - [ ] Add path deletion with confirmation
 
 ### Module Management
-- [ ] Build module list view within path editor
-- [ ] Create module creation form
-- [ ] Implement module editing interface
-- [ ] Add drag-and-drop module reordering
-- [ ] Build module settings panel
+- [x] Build module list view within path editor
+- [x] Create module creation form
+- [x] Implement module editing interface
+- [x] Add drag-and-drop module reordering
+- [x] Build module settings panel
 
 ### Lesson Management
-- [ ] Build lesson list view within module editor
-- [ ] Create lesson creation form
-- [ ] Implement lesson editing interface
-- [ ] Add drag-and-drop lesson reordering
-- [ ] Build lesson settings panel
+- [x] Build lesson list view within module editor
+- [x] Create lesson creation form
+- [x] Implement lesson editing interface
+- [x] Add drag-and-drop lesson reordering
+- [x] Build lesson settings panel
 
 ### TipTap Rich Text Editor
-- [ ] Install and configure TipTap dependencies
-- [ ] Create custom editor component
-- [ ] Implement text formatting toolbar
-- [ ] Add heading, paragraph, list support
-- [ ] Implement code block with syntax highlighting
-- [ ] Add image upload and embed
-- [ ] Add YouTube video embed
+- [x] Install and configure TipTap dependencies
+- [x] Create custom editor component
+- [x] Implement text formatting toolbar
+- [x] Add heading, paragraph, list support
+- [x] Implement code block with syntax highlighting
+- [x] Add image upload and embed
+- [x] Add YouTube video embed
 - [ ] Create custom content block extensions
 - [ ] Add lab recipe block
 - [ ] Add resource card block
-- [ ] Implement autosave functionality
+- [x] Implement autosave functionality
 
 ### Publishing & Preview
 - [ ] Build publishing controls (draft/published toggle)
