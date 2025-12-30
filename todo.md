@@ -320,41 +320,41 @@
 ## PHASE 1: Learner Experience
 
 ### Learner Dashboard
-- [ ] Create learner dashboard layout
-- [ ] Build enrolled paths list
-- [ ] Display progress statistics (completion %, time spent)
-- [ ] Show recent activity feed
-- [ ] Add continue learning section
+- [x] Create learner dashboard layout
+- [x] Build enrolled paths list
+- [x] Display progress statistics (completion %, time spent)
+- [ ] Show recent activity feed (placeholder)
+- [x] Add continue learning section
 
 ### Public Lesson Viewer
-- [ ] Create lesson viewer page with navigation
-- [ ] Implement lesson content rendering
-- [ ] Add previous/next lesson navigation
-- [ ] Build module/lesson sidebar
-- [ ] Add progress indicator
-- [ ] Implement lesson completion marking
+- [x] Create lesson viewer page with navigation
+- [x] Implement lesson content rendering
+- [x] Add previous/next lesson navigation
+- [x] Build module/lesson sidebar
+- [x] Add progress indicator
+- [x] Implement lesson completion marking
 
 ### Note-Taking System
-- [ ] Create notes panel component
-- [ ] Implement note categories (Insight/Todo/Question/Code)
-- [ ] Add note creation form
-- [ ] Build notes list with filtering
-- [ ] Add note editing and deletion
-- [ ] Link notes to specific lessons
+- [x] Create notes panel component
+- [x] Implement note categories (Insight/Todo/Question/Code)
+- [x] Add note creation form
+- [x] Build notes list with filtering
+- [ ] Add note editing and deletion (backend ready)
+- [x] Link notes to specific lessons
 
 ### Bookmarking
-- [ ] Create bookmark button component
-- [ ] Implement bookmark creation
-- [ ] Build bookmarks list page
-- [ ] Add bookmark deletion
-- [ ] Support polymorphic bookmarking (paths/modules/lessons)
+- [x] Create bookmark button component
+- [x] Implement bookmark creation
+- [ ] Build bookmarks list page (backend ready)
+- [x] Add bookmark deletion
+- [x] Support polymorphic bookmarking (paths/modules/lessons)
 
 ### Enrollment System
 - [x] Create enrollment API endpoints
 - [x] Build enrollment backend logic
-- [ ] Create enrollment UI flow
-- [ ] Build enrollment confirmation
-- [ ] Add unenrollment functionality
+- [x] Create enrollment UI flow
+- [x] Build enrollment confirmation
+- [ ] Add unenrollment functionality (backend ready)
 - [ ] Implement access control based on enrollment
 
 ## PHASE 2: Export System

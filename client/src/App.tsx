@@ -5,6 +5,9 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import LearnerDashboard from "./pages/learner/LearnerDashboard";
+import BrowseCourses from "./pages/learner/BrowseCourses";
+import LessonViewer from "./pages/learner/LessonViewer";
 import PathEditor from "./pages/creator/PathEditor";
 import LessonEditorPage from "./pages/creator/LessonEditorPage";
 import Dashboard from "./pages/creator/Dashboard";
@@ -13,9 +16,12 @@ import LearningPaths from "./pages/creator/LearningPaths";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
+      <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/creator/dashboard"} component={Dashboard} />
+      <Route path={"/dashboard"} component={LearnerDashboard} />
+      <Route path={"/browse"} component={BrowseCourses} />
+      <Route path={"/learn/:pathId/:lessonId"} component={LessonViewer} />
+      <Route path={"/creator"} component={Dashboard} />
       <Route path={"/creator/paths"} component={LearningPaths} />
       <Route path={"/creator/paths/:id"} component={PathEditor} />
       <Route path={"/creator/lessons/:id"} component={LessonEditorPage} />
