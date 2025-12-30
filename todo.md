@@ -315,3 +315,91 @@
 - [ ] Add loading states and error handling
 - [ ] Implement optimistic updates
 - [ ] Add success/error toast notifications
+
+
+## PHASE 1: Learner Experience
+
+### Learner Dashboard
+- [ ] Create learner dashboard layout
+- [ ] Build enrolled paths list
+- [ ] Display progress statistics (completion %, time spent)
+- [ ] Show recent activity feed
+- [ ] Add continue learning section
+
+### Public Lesson Viewer
+- [ ] Create lesson viewer page with navigation
+- [ ] Implement lesson content rendering
+- [ ] Add previous/next lesson navigation
+- [ ] Build module/lesson sidebar
+- [ ] Add progress indicator
+- [ ] Implement lesson completion marking
+
+### Note-Taking System
+- [ ] Create notes panel component
+- [ ] Implement note categories (Insight/Todo/Question/Code)
+- [ ] Add note creation form
+- [ ] Build notes list with filtering
+- [ ] Add note editing and deletion
+- [ ] Link notes to specific lessons
+
+### Bookmarking
+- [ ] Create bookmark button component
+- [ ] Implement bookmark creation
+- [ ] Build bookmarks list page
+- [ ] Add bookmark deletion
+- [ ] Support polymorphic bookmarking (paths/modules/lessons)
+
+### Enrollment System
+- [x] Create enrollment API endpoints
+- [x] Build enrollment backend logic
+- [ ] Create enrollment UI flow
+- [ ] Build enrollment confirmation
+- [ ] Add unenrollment functionality
+- [ ] Implement access control based on enrollment
+
+## PHASE 2: Export System
+
+### Export Infrastructure
+- [ ] Create export job system
+- [ ] Build HTML template engine
+- [ ] Implement asset bundling
+- [ ] Add CSS/JS minification
+- [ ] Create export status tracking
+
+### Export Templates
+- [ ] Design minimal template
+- [ ] Create documentation template
+- [ ] Build course template
+- [ ] Implement blog template
+- [ ] Add template customization options
+
+### Export UI
+- [ ] Create export dialog in path editor
+- [ ] Build template selection interface
+- [ ] Add export progress indicator
+- [ ] Implement download functionality
+- [ ] Add deployment options (Netlify/Vercel/GitHub Pages)
+
+## PHASE 3: AI Video Intelligence
+
+### Gemini Integration
+- [ ] Set up Gemini API client
+- [ ] Create video analysis service
+- [ ] Implement transcript extraction
+- [ ] Add chapter detection
+- [ ] Extract CLI commands
+- [ ] Identify key concepts
+
+### Video Intelligence UI
+- [ ] Create video analysis page
+- [ ] Build YouTube URL input
+- [ ] Add analysis progress indicator
+- [ ] Display extracted content
+- [ ] Implement content import to lessons
+- [ ] Add analysis history
+
+### AI Usage Tracking
+- [ ] Create AI usage logging
+- [ ] Build cost estimation
+- [ ] Add usage analytics dashboard
+- [ ] Implement rate limiting

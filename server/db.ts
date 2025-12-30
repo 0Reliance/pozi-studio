@@ -755,3 +755,113 @@ export async function reorderLessons(lessonOrders: Array<{ id: number; orderInde
       .where(eq(lessons.id, id));
   }
 }
+
+
+// ============================================================================
+// LEARNER FUNCTIONS
+// ============================================================================
+
+// Progress
+export async function getProgressByUserAndPath(userId: number, pathId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Get all lessons in the path with progress
+  const result = await db
+    .select({
+      lesson: lessons,
+      progress: progress,
+      module: modules,
+    })
+    .from(lessons)
+    .leftJoin(progress, and(eq(progress.lessonId, lessons.id), eq(progress.userId, userId)))
+    .leftJoin(modules, eq(lessons.moduleId, modules.id))
+    .where(eq(modules.pathId, pathId));
+
+  return result;
+}
+
+export async function markLessonComplete(userId: number, lessonId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Upsert progress
+  await db
+    .insert(progress)
+    .values({
+      userId,
+      lessonId,
+      status: "completed",
+      completionPercentage: 100,
+    })
+    .onDuplicateKeyUpdate({
+      set: {
+        status: "completed",
+        completionPercentage: 100,
+      },
+    });
+}
+
+export async function markLessonIncomplete(userId: number, lessonId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db
+    .update(progress)
+    .set({ status: "not_started", completionPercentage: 0 })
+    .where(and(eq(progress.userId, userId), eq(progress.lessonId, lessonId)));
+}
+
+// Notes - Use existing functions: getUserNotes, getLessonNotes, createNote, updateNote, deleteNote
+
+// Bookmarks
+// Use existing bookmark functions: getUserBookmarks, createBookmark, deleteBookmark
+
+// Public Learning Paths
+export async function getPublishedLearningPaths() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  return db
+    .select()
+    .from(learningPaths)
+    .where(eq(learningPaths.isPublished, true))
+    .orderBy(desc(learningPaths.createdAt));
+}
+
+export async function getLearningPathWithContent(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const path = await db.select().from(learningPaths).where(eq(learningPaths.id, id)).limit(1);
+
+  if (path.length === 0) {
+    throw new Error("Learning path not found");
+  }
+
+  const pathModules = await db
+    .select()
+    .from(modules)
+    .where(eq(modules.pathId, id))
+    .orderBy(modules.orderIndex);
+
+  const modulesWithLessons = await Promise.all(
+    pathModules.map(async (module) => {
+      const moduleLessons = await db
+        .select()
+        .from(lessons)
+        .where(eq(lessons.moduleId, module.id))
+        .orderBy(lessons.orderIndex);
+
+      return {
+        ...module,
+        lessons: moduleLessons,
+      };
+    })
+  );
+
+  return {
+    ...path[0],
+    modules: modulesWithLessons,
+  };
+}
