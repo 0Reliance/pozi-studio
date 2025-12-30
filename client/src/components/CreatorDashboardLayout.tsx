@@ -11,6 +11,7 @@ import {
   LogOut,
   Settings,
   Video,
+  Download,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
@@ -40,6 +41,11 @@ const navItems: NavItem[] = [
     title: "Learning Paths",
     href: "/creator/paths",
     icon: FolderOpen,
+  },
+  {
+    title: "Exports",
+    href: "/creator/exports",
+    icon: Download,
   },
   {
     title: "Media Library",

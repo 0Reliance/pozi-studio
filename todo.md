@@ -403,3 +403,31 @@
 - [ ] Build cost estimation
 - [ ] Add usage analytics dashboard
 - [ ] Implement rate limiting
+
+
+## Export UI Implementation
+
+### Export Dialog
+- [x] Create ExportDialog component with template selection
+- [x] Add template preview cards (minimal, documentation, course, blog)
+- [x] Implement export job creation
+- [x] Show progress indicator during export
+- [x] Display success/error states
+
+### Path Editor Integration
+- [x] Add Export button to Path Editor header
+- [x] Connect button to ExportDialog
+- [x] Show export status in UI
+
+### Export Management
+- [x] Create Exports list page in creator dashboard
+- [x] Display export history with status
+- [x] Add download buttons for completed exports
+- [x] Implement delete functionality
+- [x] Add preview links
+
+### Testing
+- [ ] Test complete export workflow
+- [ ] Verify template selection works
+- [ ] Test download functionality
+- [ ] Check error handling

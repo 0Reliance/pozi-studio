@@ -10,6 +10,7 @@ import BrowseCourses from "./pages/learner/BrowseCourses";
 import LessonViewer from "./pages/learner/LessonViewer";
 import PathEditor from "./pages/creator/PathEditor";
 import LessonEditorPage from "./pages/creator/LessonEditorPage";
+import Exports from "./pages/creator/Exports";
 import Dashboard from "./pages/creator/Dashboard";
 import LearningPaths from "./pages/creator/LearningPaths";
 
@@ -24,7 +25,8 @@ function Router() {
       <Route path={"/creator"} component={Dashboard} />
       <Route path={"/creator/paths"} component={LearningPaths} />
       <Route path={"/creator/paths/:id"} component={PathEditor} />
-      <Route path={"/creator/lessons/:id"} component={LessonEditorPage} />
+      <Route path="/creator/paths/:id/lessons/:lessonId" component={LessonEditorPage} />
+      <Route path="/creator/exports" component={Exports} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

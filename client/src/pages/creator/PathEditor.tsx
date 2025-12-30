@@ -28,6 +28,7 @@ import {
 import { useEffect, useState } from "react";
 import { useRoute } from "wouter";
 import { toast } from "sonner";
+import ExportDialog from "@/components/ExportDialog";
 import { SortableList } from "@/components/SortableList";
 import {
   DropdownMenu,
@@ -53,6 +54,7 @@ export default function PathEditor() {
   const [selectedModuleId, setSelectedModuleId] = useState<number | null>(null);
   const [selectedLessonId, setSelectedLessonId] = useState<number | null>(null);
   const [showSettings, setShowSettings] = useState(false);
+  const [showExportDialog, setShowExportDialog] = useState(false);
   const [newModuleOpen, setNewModuleOpen] = useState(false);
   const [newModuleData, setNewModuleData] = useState({ title: "", slug: "", description: "" });
 
@@ -186,13 +188,22 @@ export default function PathEditor() {
           <div className="p-4 border-b border-border">
             <div className="flex items-center justify-between mb-2">
               <h2 className="text-lg font-semibold truncate">{path.title}</h2>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setShowSettings(!showSettings)}
-              >
-                <Settings className="h-4 w-4" />
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowExportDialog(true)}
+                >
+                  Export
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setShowSettings(!showSettings)}
+                >
+                  <Settings className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <Badge variant={path.isPublished ? "default" : "secondary"}>
@@ -374,6 +385,14 @@ export default function PathEditor() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Export Dialog */}
+      <ExportDialog
+        open={showExportDialog}
+        onOpenChange={setShowExportDialog}
+        pathId={pathId}
+        pathTitle={path.title}
+      />
     </CreatorDashboardLayout>
   );
 }
