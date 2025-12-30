@@ -726,3 +726,32 @@ export async function getPlatformAnalytics(startDate?: Date, endDate?: Date) {
 
   return await query.orderBy(desc(platformAnalytics.date));
 }
+
+
+// ============================================================================
+// REORDERING HELPERS
+// ============================================================================
+
+export async function reorderModules(moduleOrders: Array<{ id: number; orderIndex: number }>) {
+  const db = await getDb();
+  if (!db) return;
+
+  // Update each module's order index
+  for (const { id, orderIndex } of moduleOrders) {
+    await db.update(modules)
+      .set({ orderIndex })
+      .where(eq(modules.id, id));
+  }
+}
+
+export async function reorderLessons(lessonOrders: Array<{ id: number; orderIndex: number }>) {
+  const db = await getDb();
+  if (!db) return;
+
+  // Update each lesson's order index
+  for (const { id, orderIndex } of lessonOrders) {
+    await db.update(lessons)
+      .set({ orderIndex })
+      .where(eq(lessons.id, id));
+  }
+}
