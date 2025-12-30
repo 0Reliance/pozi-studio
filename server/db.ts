@@ -865,3 +865,4 @@ export async function getLearningPathWithContent(id: number) {
     modules: modulesWithLessons,
   };
 }
+
